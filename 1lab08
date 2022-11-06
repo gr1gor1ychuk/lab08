@@ -1,0 +1,32 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+void randomNumber(int b, int s);
+
+int main()
+{
+    int b, s;
+
+    printf("The size of ARRAY: ");
+    scanf("%d", &s);
+
+    printf("The MAXIMAL possible number: ");
+    scanf("%d", &b);
+
+    randomNumber(b, s);
+    printf("\nEnd of Program.\n");
+    printf("\nDone by FEP-13 Denis Grigoriychuk\n");
+}
+
+void randomNumber(int b, int s)
+{
+   int randomArray[s],i;
+   for(i=0; i<s; i++)
+     randomArray[i]=rand()%b;
+
+   printf("\nElements of the array:\n");
+   for(i=0; i<s; i++)
+   {
+     printf("\n%d Number:   %d", i+1, randomArray[i]);
+   }
+}
