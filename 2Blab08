@@ -1,0 +1,51 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+#define N1 12
+
+#define M1 12
+
+void fillMatrix(int A[][M1], int N, int M);
+int sortMatrix(int A[][M1],int rowsize, int colsize);
+void displayArray(int A[][M1], int N, int M);
+
+int main(void)
+{
+    int array[N1][M1] = {0};
+
+    fillMatrix(array, N1, M1);
+
+    displayArray(array, N1, M1);
+
+    //sortMatrix(array, N1, M1);
+
+    return  0;
+}
+
+void fillMatrix(int A[][M1], int N, int M)
+{
+    int rows = 12, columns = 12;
+
+    srand(time(NULL));
+
+    for(int i = 0; i < rows; i++)
+    {
+        for(int j = 0; j < columns; j++)
+        {
+            A[i][j] = 0 + rand() % 10;
+        }
+    }
+}
+
+
+void displayArray(int A[][M1], int N, int M)
+{
+    for(int i = 0; i < N; i++)
+    {
+        for(int j = 0; j < M; j++)
+        {
+            printf("%i ", A[i][j]);
+        }
+    }
+}
