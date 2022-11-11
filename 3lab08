@@ -1,0 +1,55 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+void randomNumber(int b, int s);
+
+int main()
+{
+    int b, s;
+
+    printf("The size of ARRAY: ");
+    scanf("%d", &s);
+
+    printf("The MAXIMAL possible number: ");
+    scanf("%d", &b);
+
+    randomNumber(b, s);
+    printf("\nEnd of Program.\n");
+    printf("\nDone by FEP-13 Denis Grigoriychuk\n");
+}
+
+void randomNumber(int b, int s)
+{
+   int randomArray[s],i;
+   for(i=0; i<s; i++)
+     randomArray[i]=rand()%b;
+
+   printf("\nElements of the array:\n");
+   for(i=0; i<s; i++)
+   {
+     printf("\n%d Number:   %d", i+1, randomArray[i]);
+   }
+
+    int largest, smallest, result;
+
+   for (int i = 1; i < s; ++i) {
+    if (randomArray[0] < randomArray[i]) {
+      randomArray[0] = randomArray[i];
+    }
+  }
+
+    largest = randomArray[0];
+  printf("\nLargest element = %d\n", largest);
+
+  for (int i = 1; i < s; ++i) {
+    if (randomArray[0] > randomArray[i]) {
+      randomArray[0] = randomArray[i];
+    }
+  }
+
+    smallest = randomArray[0];
+  printf("\nSmallest element = %d\n", smallest);
+
+    result = largest + smallest;
+    printf("\nSum of largest and smallest numbers = %d\n", result);
+}
