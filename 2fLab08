@@ -1,0 +1,54 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+void pointerTwo(int m, int n);
+ 
+int main()
+{
+
+  int m, n;
+
+  printf("Choose ROW: ");
+  scanf("%d", &m);
+    
+  printf("Choose COLUMN: ");
+  scanf("%d", &n);
+
+  if (m,n < 0 || m,n > 12)
+    {
+  printf("NULL\n");
+  return 0;
+    }
+
+  pointerTwo(m, n);
+
+printf("Program finished!\n");
+printf("\n \n");
+}
+
+void pointerTwo(int m, int n)
+{
+
+  int arr[12][12] = {
+                    {1, 2, 354, 4, 5, 6, 7, 8, 9, 0, 1, 2},
+                    {2, 3, 4, 5, 6, 7, 8, 9, 0, 1, 2, 3},
+                    {31, 4, 5, 6, 7 , 8, 9, 0, 1, 2, 3, 4},
+                    {4, 5, 6, 7, 8, 9, 0, 1, 2, 3, 4, 5},
+                    {5, 6, 7, 8, 9, 0, 1, 2, 3, 4, 5, 6},
+                    {6, 7, 8, 9, 0, 1, 2, 3, 4, 5, 6, 7},
+                    {7, 8, 9, 0, 1, 2, 3, 4, 5, 6, 7, 8},
+                    {8, 9, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9},
+                    {9, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 0},
+                    {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1},
+                    {1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1, 2},
+                    {2, 3, 4, 5, 6, 7, 8, 9, 0, 1, 2, 3}
+                  };
+  
+  int m1 = m - 1;
+  int n1 = n - 1;
+
+   int ptr = arr[m1][n1];
+  printf("Your number [%d][%d] is: %d\n", m, n, arr[m1][n1]);
+  printf("Pointer of %d is: %p\n", arr[m1][n1], ptr);
+  printf ("\n \n");                                          
+}
